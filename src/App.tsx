@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // @ts-ignore
 import { ArrowLeft, Home, MessageSquareQuote, FileCheck } from 'lucide-react';
 
@@ -47,6 +47,10 @@ const TEXT_DATABASE = {
 export default function App() {
   const [currentLang, setCurrentLang] = useState<string | null>(null);
   const [currentLegal, setCurrentLegal] = useState<string | null>(null);
+
+  useEffect(() => {
+    document.title = "Zustellungsvollmacht (mehrsprachig)";
+  }, []);
 
   const resetToHome = () => {
     setCurrentLang(null);
